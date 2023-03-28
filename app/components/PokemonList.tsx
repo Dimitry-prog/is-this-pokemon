@@ -1,6 +1,11 @@
-import React from 'react';
+import React, {FC} from 'react';
+import {IPokemon} from "@/types";
 
-const PokemonList = ({pokemons}) => {
+interface PokemonListProps {
+  pokemons: IPokemon[];
+}
+
+const PokemonList: FC<PokemonListProps> = ({pokemons}) => {
   return (
     <ul>
       {pokemons.map(pokemon => (
