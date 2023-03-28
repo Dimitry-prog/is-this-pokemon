@@ -1,5 +1,5 @@
-import pokemon from '@/pokemon.json';
 import {NextResponse} from "next/server";
+import pokemon from '@/pokemon.json';
 
 export const GET = (req: Request) => {
   const {searchParams} = new URL(req.url);
