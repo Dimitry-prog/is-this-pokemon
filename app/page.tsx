@@ -1,12 +1,15 @@
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import {Inter} from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({subsets: ['latin']})
 
-export default function Home() {
+export default async function Home() {
+  const req = await fetch('http://localhost:3000/api/search');
+  const data = await req.json();
+
   return (
-    <main>
-
+    <main className={inter.className}>
+      {JSON.stringify(data)}
     </main>
   )
 }
